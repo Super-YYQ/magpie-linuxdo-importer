@@ -1,0 +1,18 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.superpowers/
+.idea/
+.vscode/
+*.swp
+.claude/
+# Built userscript lives on the `release` branch only (tag-triggered publish).
+userscript/magpie-linuxdo-importer.user.js
+test-results/
+playwright-report/
+# Bundled release-guard (built in CI read-only job; not committed).
+dist/
+# planning-with-files working memory (local only).
+.planning/
+

@@ -1,0 +1,24 @@
+{
+  "name": "magpie-linuxdo-importer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tampermonkey userscript: select API share text on linux.do and open magpie import deeplink (with model auto-detect)",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:unit",
+    "test:unit": "node --test tests/parser.test.mjs tests/model-extractor.test.mjs tests/release-guard.test.mjs && node tests/variants-check.mjs",
+    "test:browser": "npm run build && playwright test",
+    "build": "node scripts/build.mjs",
+    "check": "npm run test:unit && npm run test:browser",
+    "build:guard": "esbuild scripts/release-guard.mjs --bundle --platform=node --format=esm --outfile=dist/release-guard.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "esbuild": "^0.25.12",
+    "semver": "^7.7.2"
+  }
+}
